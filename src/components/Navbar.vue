@@ -12,12 +12,29 @@
           >
             Home
           </router-link>
-
           <router-link
-            to="/contact"
+            to="/destination"
             class="text-white hover:underline hover:underline-offset-8 hover:decoration-white transition"
           >
-            Contact
+            Destination
+          </router-link>
+          <router-link
+            to="/activity"
+            class="text-white hover:underline hover:underline-offset-8 hover:decoration-white transition"
+          >
+            Activity
+          </router-link>
+          <router-link
+            to="/info"
+            class="text-white hover:underline hover:underline-offset-8 hover:decoration-white transition"
+          >
+            Tips & Info
+          </router-link>
+          <router-link
+            to="/gallery"
+            class="text-white hover:underline hover:underline-offset-8 hover:decoration-white transition"
+          >
+            Gallery
           </router-link>
         </div>
         <div class="sm:hidden">
