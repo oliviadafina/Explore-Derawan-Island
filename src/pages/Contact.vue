@@ -6,8 +6,8 @@ import Footer from "../components/Footer.vue";
 <template>
   <Navbar />
   <section
-    class="relative w-full h-[100vh] bg-cover bg-center flex items-center"
-    style="background-image: url('/public/bg.png')"
+    class="relative w-full h-screen bg-cover bg-center flex items-center"
+    style="background-image: url('/bg.png')"
   >
     <div class="absolute inset-0 bg-black/40"></div>
 

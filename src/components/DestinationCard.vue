@@ -2,12 +2,12 @@
   <div
     class="rounded-2xl overflow-hidden shdow-lg bg-white cursor-pointer hover:scale-[1.02] transition duration-300"
   >
-    <div class="h-56 w-full overflow-hidden">
+    <div class="aspect-3/3 w-full overflow-hidden">
       <img :src="image" :alt="title" class="w-full h-full object-cover" />
     </div>
     <div class="p-4">
       <h3
-        class="text-xl font-semibold text-[#1C2A39]"
+        class="text-lg font-semibold text-[#1C2A39] line-clamp-2"
         style="font-family: 'Montagu Slab', serif"
       >
         {{ title }}

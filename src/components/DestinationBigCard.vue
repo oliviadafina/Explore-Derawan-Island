@@ -6,7 +6,7 @@ const props = defineProps({
 const content = {
   derawan: {
     title: "Derawan Island",
-    image: "/public/derawan.png",
+    image: "/derawan.png",
     desc: `Derawan Island is one of the most iconic islands in the Derawan Archipelago,
     known for its calm turquoise waters, soft white sand, and vibrant marine life.
     Visitors can enjoy snorkeling with sea turtles, exploring colorful coral reefs,
@@ -15,7 +15,7 @@ const content = {
   },
   kakaban: {
     title: "Kakaban Island",
-    image: "/public/kakaban.png",
+    image: "/kakaban.png",
     desc: `Kakaban Island is famous for its one-of-a-kind stingless jellyfish lake, one of only
     a few in the world. The island offers a rare experience where visitors can swim
     safely among jellyfish. Surrounded by lush forests and steep limestone cliffs,
@@ -23,7 +23,7 @@ const content = {
   },
   sangalaki: {
     title: "Sangalaki Island",
-    image: "/public/sangalaki.png",
+    image: "/sangalaki.png",
     desc: `Sangalaki Island is home to manta rays and vibrant coral ecosystems. Known as one
     of the best manta-watching spots in Indonesia, the island offers unforgettable
     snorkeling and diving encounters. Its pristine environment and rich marine
@@ -31,7 +31,7 @@ const content = {
   },
   maratua: {
     title: "Maratua Island",
-    image: "/public/maratua.png",
+    image: "/maratua.png",
     desc: `Maratua Island is known for its serene turquoise lagoons and peaceful beaches.
     The island offers quiet escapes, beautiful overwater villas, and stunning sea
     views. With its calm atmosphere and natural charm, Maratua is the ideal place
@@ -47,7 +47,6 @@ const content = {
     <img
       :src="content[island].image"
       class="w-full lg:w-[40%] h-[260px] rounded-xl object-cover"
-      alt=""
     />
     <div class="flex flex-col justify-center lg:w-[60%]">
       <h2 class="text-4xl font-bold mb-4">

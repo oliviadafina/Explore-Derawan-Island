@@ -1,8 +1,11 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
+
 import DestinationBigCard from "./DestinationBigCard.vue";
 import DestinationSpots from "./DestinationSpots.vue";
 
+const route = useRoute();
 const selected = ref("derawan");
 
 const islands = [
@@ -11,16 +14,23 @@ const islands = [
   { key: "sangalaki", label: "Sangalaki" },
   { key: "maratua", label: "Maratua" },
 ];
+
+onMounted(() => {
+  const tab = route.query.tab;
+  if (tab) {
+    selected.value = tab;
+  }
+});
 </script>
 
 <template>
   <section class="w-full py-16 bg-[#004E94] text-white">
-    <div class="flex justify-center gap-4">
+    <div class="flex flex-wrap justify-center gap-3 px-3 text-center">
       <button
         v-for="island in islands"
         :key="island.key"
         @click="selected = island.key"
-        class="px-6 py-2 rounded-full font-medium transition-all duration-300"
+        class="px-4 py-2 md:px-6 rounded-full font-medium transition-all duration-300"
         :class="
           selected === island.key
             ? 'bg-white text-[#004E94] shadow-lg scale-105'

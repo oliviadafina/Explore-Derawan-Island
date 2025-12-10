@@ -1,6 +1,25 @@
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function goHomeAndScrollTop() {
+  router.push("/").then(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50);
+  });
+}
+
+function confirmAndOpen(url) {
+  const proceed = confirm("You are about to open an external app. Continue?");
+  if (proceed) {
+    window.open(url, "_blank");
+  }
 }
 </script>
 
@@ -27,42 +46,78 @@ function scrollToTop() {
     </button>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
       <div class="flex flex-col items-start">
-        <img src="/public/logo-blue.png" class="h-40 w-auto" />
+        <img
+          src="/logo-blue.png"
+          class="h-40 w-auto cursor-pointer"
+          @click="goHomeAndScrollTop"
+        />
       </div>
       <div class="text-[#1C2A39] text-lg font-medium leading-relaxed space-y-3">
         <p>
-          Derawan Island, Berau Regency,<br />
-          East Kalimantan, Indonesia
+          <button
+            @click="confirmAndOpen('https://maps.app.goo.gl/nn1iShGasMW3WMzVA')"
+            class="hover:underline underline-offset-4 cursor-pointer text-left"
+          >
+            Derawan Island, Berau Regency,<br> East Kalimantan, Indonesia
+          </button>
         </p>
 
         <p class="pt-2">
-          <a href="tel:+628123456789" class="underline underline-offset-4">
+          <button
+            @click="confirmAndOpen('tel:+628123456789')"
+            class="underline underline-offset-4 cursor-pointer"
+          >
             (062) 812-345-6789
-          </a>
+          </button>
         </p>
 
         <p>
-          <a
-            href="mailto:explorederawan@gmail.com"
-            class="underline underline-offset-4"
+          <button
+            @click="confirmAndOpen('mailto:explorederawan@gmail.com')"
+            class="underline underline-offset-4 cursor-pointer"
           >
             explorerderawan@gmail.com
-          </a>
+          </button>
         </p>
       </div>
       <div class="text-[#1C2A39] text-lg leading-relaxed flex flex-col gap-6">
         <div>
           <p class="font-semibold text-xl mb-2">Social Media</p>
           <ul class="space-y-1">
-            <li>Facebook</li>
-            <li>X</li>
-            <li>Instagram</li>
+            <li>
+              <button
+                @click="confirmAndOpen('https://www.facebook.com')"
+                class="hover:underline underline-offset-4 cursor-pointer"
+              >
+                Facebook
+              </button>
+            </li>
+            <li>
+              <button
+                @click="confirmAndOpen('https://www.x.com')"
+                class="hover:underline underline-offset-4 cursor-pointer"
+              >
+                X
+              </button>
+            </li>
+            <li>
+              <button
+                @click="confirmAndOpen('https://www.instagram.com')"
+                class="hover:underline underline-offset-4 cursor-pointer"
+              >
+                Instagram
+              </button>
+            </li>
           </ul>
         </div>
 
         <div>
           <p class="font-semibold text-xl mb-2">Any Question?</p>
-          <p>FAQ</p>
+          <router-link
+            to="/faq"
+            class="hover:underline underline-offset-4 cursor-pointer"
+            >FAQ</router-link
+          >
         </div>
       </div>
     </div>

@@ -4,27 +4,27 @@ import ActivityCard from "./ActivityCard.vue";
 const activities = [
   {
     title: "Snorkeling",
-    image: "/public/act-snorkeling.png",
+    image: "/snorkeling.png",
     desc: "Explore Derawan’s clear turquoise waters filled with colorful fish and coral reefs.",
   },
   {
     title: "Diving",
-    image: "/public/act-diving.png",
+    image: "/diving.png",
     desc: "Discover deeper marine wonders with manta rays, turtles, and amazing corals.",
   },
   {
     title: "Sunset Viewing",
-    image: "/public/act-sunset.png",
+    image: "/sunset.png",
     desc: "Relax by the water as the sky turns golden over Derawan’s peaceful horizon.",
   },
   {
     title: "Turtle Release",
-    image: "/public/act-turtle.png",
+    image: "/turtleact.png",
     desc: "Help baby turtles reach the ocean in a heartwarming conservation activity.",
   },
   {
     title: "Kayaking",
-    image: "/public/act-kayak.png",
+    image: "/kayaking.png",
     desc: "Paddle across calm turquoise waters and explore quiet lagoon areas.",
   },
 ];

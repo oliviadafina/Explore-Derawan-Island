@@ -5,8 +5,8 @@ import DestinationCard from "./DestinationCard.vue";
 <template>
   <section
     id="explore"
-    class="relative w-full min-h-screen bg-cover bg-center py-10 px-6 lg:px-20 text-white"
-    style="background-image: url('/public/home-bg-bottom.png')"
+    class="relative w-full py-20 px-6 lg:px-20 bg-cover bg-center text-white"
+    style="background-image: url('/home-bg-bottom.png')"
   >
     <div class="absolute inset-0 bg-black/30"></div>
     <div class="relative z-10 max-w-3xl">
@@ -28,33 +28,36 @@ import DestinationCard from "./DestinationCard.vue";
       </p>
     </div>
     <div class="relative z-10 mt-16">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl">
-        <router-link to="/destination">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl"
+      >
+        <router-link :to="{ path: '/destination', query: { tab: 'derawan' } }">
           <DestinationCard
             title="Derawan Island"
-            subtitle="See more..."
-            image="/public/derawan.png"
+            subtitle="Click to see more"
+            image="/derawan.png"
           />
         </router-link>
-        <router-link to="/destination">
+        <router-link :to="{ path: '/destination', query: { tab: 'kakaban' } }">
           <DestinationCard
             title="Kakaban Island"
-            subtitle="See more..."
-            image="/public/kakaban.png"
+            subtitle="Click to see more"
+            image="/kakaban.png"
           />
         </router-link>
-        <router-link to="/destination">
+        <router-link
+          :to="{ path: '/destination', query: { tab: 'sangalaki' } }">
           <DestinationCard
             title="Sangalaki Island"
-            subtitle="See more..."
-            image="/public/sangalaki.png"
+            subtitle="Click to see more"
+            image="/sangalaki.png"
           />
         </router-link>
-        <router-link to="/destination">
+        <router-link :to="{ path: '/destination', query: { tab: 'maratua' } }">
           <DestinationCard
             title="Maratua Island"
-            subtitle="See more..."
-            image="/public/maratua.png"
+            subtitle="Click to see more"
+            image="/maratua.png"
           />
         </router-link>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <section
     class="relative w-full h-screen bg-cover bg-center flex items-center"
-    style="background-image: url('/public/hero-section.png')"
+    style="background-image: url('/hero-section.png')"
   >
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 px-6 lg:px-20 text-left text-white max-w-3xl">
