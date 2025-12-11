@@ -1,12 +1,3 @@
-<script setup>
-function scrollToExplore() {
-  const target = document.getElementById("explore");
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth" });
-  }
-}
-</script>
-
 <template>
   <section
     class="relative w-full min-h-[700px] bg-cover bg-center flex items-center"
@@ -43,3 +34,12 @@ function scrollToExplore() {
     </div>
   </section>
 </template>
+
+<script setup>
+function scrollToExplore() {
+  const target = document.getElementById("explore");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}
+</script>

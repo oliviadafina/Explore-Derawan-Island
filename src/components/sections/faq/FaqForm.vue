@@ -1,6 +1,7 @@
 <script setup>
-import ModalSucces from './ModalSucces.vue';
-import { ref } from 'vue';
+import Toast from "@/components/Toast.vue";
+import ModalSucces from "@/components/ModalSucces.vue";
+import { ref } from "vue";
 
 const showModal = ref(false);
 
@@ -9,19 +10,29 @@ const email = ref("");
 const phone = ref("");
 const messageText = ref("");
 
+const toastShow = ref(false);
+const toastMessage = ref("");
+const toastType = ref("error");
+
+function showToast(msg) {
+  toastMessage.value = msg;
+  toastShow.value = true;
+  setTimeout(() => (toastShow.value = false), 2500);
+}
+
 function submitForm(e) {
   e.preventDefault();
 
-  if (name.value && email.value && phone.value && messageText.value) {
-    showModal.value = true;
-
-    name.value = "";
-    email.value = "";
-    phone.value = "";
-    messageText.value = "";
-  } else {
-    alert("Please fill out all fields before submitting.");
+  if (!name.value || !email.value || !phone.value || !messageText.value) {
+    showToast("Please fill out all fields!");
+    return;
   }
+
+  showModal.value = true;
+  name.value = "";
+  email.value = "";
+  phone.value = "";
+  messageText.value = "";
 }
 
 function closeModal() {
@@ -30,6 +41,13 @@ function closeModal() {
 </script>
 
 <template>
+  <Toast
+    :show="toastShow"
+    :title="'Form Error'"
+    :message="toastMessage"
+    :type="'error'"
+    @close="toastShow = false"
+  />
   <div class="w-full max-w-4xl mx-auto border border-white p-10 rounded-xl">
     <h2
       class="text-white text-4xl font-bold text-center mb-10"
@@ -39,13 +57,15 @@ function closeModal() {
     </h2>
     <div class="bg-white rounded-xl shadow-xl p-8">
       <form @submit="submitForm" class="space-y-4">
-        <input v-model="name"
+        <input
+          v-model="name"
           placeholder="Name"
           class="w-full p-3 rounded-md border border-[#004E94] placeholder-gray-400"
           style="font-family: 'Poppins', sans-serif"
         />
         <div class="relative">
-          <input v-model="email"
+          <input
+            v-model="email"
             placeholder="Email"
             class="w-full p-3 rounded-md border border-[#004E94] pl-10 placeholder-gray-400"
             style="font-family: 'Poppins', sans-serif"
@@ -75,13 +95,15 @@ function closeModal() {
           >
             <option>+62</option>
           </select>
-          <input v-model="phone"
+          <input
+            v-model="phone"
             placeholder="Telephone Number"
             class="w-full p-3 border border-[#004E94] rounded-r-md placeholder-gray-400"
             style="font-family: 'Poppins', sans-serif"
           />
         </div>
-        <textarea v-model="messageText"
+        <textarea
+          v-model="messageText"
           placeholder="What Can We Help You With?"
           class="w-full p-3 border border-[#004E94] rounded-md h-32 placeholder-gray-400"
           style="font-family: 'Poppins', sans-serif"

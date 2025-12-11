@@ -1,8 +1,9 @@
 <script setup>
-import ExploreSection from "@/components/ExploreSection.vue";
-import HeroHome from "@/components/HeroHome.vue";
+import Footer from "@/components/Footer.vue";
+import ExploreHome from "@/components/sections/home/ExploreHome.vue";
+import HeroHome from "@/components/sections/home/HeroHome.vue";
 </script>
 <template>
   <HeroHome />
-  <ExploreSection />
+  <ExploreHome />
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import ActivityCard from "./ActivityCard.vue";
+import ActivityCard from '@/components/ActivityCard.vue';
 
 const activities = [
   {

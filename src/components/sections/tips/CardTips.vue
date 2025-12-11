@@ -24,20 +24,6 @@ const props = defineProps({
     >
       {{ desc }}
     </p>
-    <ul
-      v-else-if="Array.isArray(desc)"
-      class="space-y-3 text-justify leading-relaxed"
-      style="font-family: 'Poppins'"
-    >
-      <li
-        v-for="(item, i) in desc"
-        :key="i"
-        class="flex gap-3 items-start"
-      >
-        <span class="text-lg">•</span>
-        <span>{{ item }}</span>
-      </li>
-    </ul>
     <div v-else class="space-y-5 text-justify" style="font-family: 'Poppins'">
       <p>{{ desc.text }}</p>
 

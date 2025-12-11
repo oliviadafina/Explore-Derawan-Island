@@ -1,7 +1,22 @@
 <script setup>
 import { useRouter } from "vue-router";
+import { ref } from "vue";
+import AlertMessage from "./Alert.vue";
 
 const router = useRouter();
+
+const showAlert = ref(false);
+let pendingUrl = "";
+
+function confirmAndOpen(url) {
+  pendingUrl = url;
+  showAlert.value = true;
+}
+
+function openSocial() {
+  window.open(pendingUrl, "_blank");
+  showAlert.value = false;
+}
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -13,13 +28,6 @@ function goHomeAndScrollTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 50);
   });
-}
-
-function confirmAndOpen(url) {
-  const proceed = confirm("You are about to open an external app. Continue?");
-  if (proceed) {
-    window.open(url, "_blank");
-  }
 }
 </script>
 
@@ -58,7 +66,8 @@ function confirmAndOpen(url) {
             @click="confirmAndOpen('https://maps.app.goo.gl/nn1iShGasMW3WMzVA')"
             class="hover:underline underline-offset-4 cursor-pointer text-left"
           >
-            Derawan Island, Berau Regency,<br> East Kalimantan, Indonesia
+            Derawan Island, Berau Regency,<br />
+            East Kalimantan, Indonesia
           </button>
         </p>
 
@@ -125,4 +134,14 @@ function confirmAndOpen(url) {
       © 2025 Explore Derawan. All rights reserved.
     </div>
   </footer>
+  <AlertMessage
+    :show="showAlert"
+    type="info"
+    title="Open External App?"
+    message="You are about to open another application. Continue?"
+    cancelText="Cancel"
+    confirmText="Open"
+    @cancel="showAlert = false"
+    @confirm="openSocial"
+  />
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import TipsCard from "./TipsCard.vue";
+import TipsCard from "./CardTips.vue";
 
 const tips = [
   {

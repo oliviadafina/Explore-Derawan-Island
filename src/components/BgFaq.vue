@@ -1,7 +1,7 @@
 <template>
   <section
     class="relative w-full min-h-[700px] bg-cover bg-center flex items-center"
-    :style="`background-image: url('${bg}')`"
+    :style="`background-image: url('${img}')`"
   >
     <div class="absolute inset-0 bg-black/30"></div>
 
@@ -13,6 +13,6 @@
 
 <script setup>
 defineProps({
-  bg: { type: String, required: true },
+  img: { type: String, required: true },
 });
 </script>

@@ -10,7 +10,6 @@
       >
         Travel Etiquette & Eco Tips
       </h1>
-
       <p 
         class="text-lg md:text-xl leading-relaxed"
         style="font-family: 'Poppins', sans-serif;"

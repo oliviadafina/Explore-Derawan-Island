@@ -1,6 +1,6 @@
 <script setup>
-import HeroCarousel from "@/components/HeroCarousel.vue";
-import GalleryGrid from "@/components/GalleryGrid.vue";
+import HeroCarousel from "@/components/sections/gallery/CarouselGallery.vue";
+import GalleryGrid from "@/components/sections/gallery/GridGallery.vue";
 
 const galleryHeroImages = [
   "/hero-section.png",

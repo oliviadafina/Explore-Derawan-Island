@@ -1,10 +1,10 @@
 <script setup>
-import HeroSection from "@/components/HeroSection.vue";
-import ActivityGrid from "@/components/ActivityGrid.vue";
+import HeroAll from "@/components/HeroAll.vue";
+import SectionActivity from "@/components/sections/activity/SectionActivity.vue";
 </script>
 
 <template>
-  <HeroSection
+  <HeroAll
     title="Discover Adventures in Derawan"
     subtitle="Discover exciting activities across the Derawan Archipelago. From snorkeling with turtles to exploring stunning island landscapes."
   />
@@ -16,7 +16,7 @@ import ActivityGrid from "@/components/ActivityGrid.vue";
       Activity
     </h2>
     <div class="mt-10">
-     <ActivityGrid />   
+      <SectionActivity />
     </div>
   </section>
 </template>

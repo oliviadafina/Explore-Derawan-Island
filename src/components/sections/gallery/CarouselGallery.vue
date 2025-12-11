@@ -1,35 +1,3 @@
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
-
-const props = defineProps({
-  images: Array,
-  title: String,
-  subtitle: String,
-});
-
-const current = ref(0);
-let interval = null;
-
-const autoSlide = () => {
-  nextSlide();
-};
-
-const nextSlide = () => {
-  current.value = (current.value + 1) % props.images.length;
-};
-
-const prevSlide = () => {
-  current.value =
-    (current.value - 1 + props.images.length) % props.images.length;
-};
-
-onMounted(() => {
-  interval = setInterval(autoSlide, 12000);
-});
-
-onBeforeUnmount(() => clearInterval(interval));
-</script>
-
 <template>
   <section class="relative w-full h-screen overflow-hidden select-none">
     <div
@@ -45,7 +13,6 @@ onBeforeUnmount(() => clearInterval(interval));
         :style="{ backgroundImage: `url(${img})` }"
       >
         <div class="absolute inset-0 bg-black/40"></div>
-
         <div
           class="absolute inset-0 flex flex-col justify-center px-8 lg:px-20 text-white z-10 max-w-3xl"
         >
@@ -55,7 +22,6 @@ onBeforeUnmount(() => clearInterval(interval));
           >
             {{ title }}
           </h1>
-
           <p
             v-if="subtitle"
             class="mt-4 text-lg opacity-90"
@@ -112,3 +78,35 @@ onBeforeUnmount(() => clearInterval(interval));
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+
+const props = defineProps({
+  images: Array,
+  title: String,
+  subtitle: String,
+});
+
+const current = ref(0);
+let interval = null;
+
+const autoSlide = () => {
+  nextSlide();
+};
+
+const nextSlide = () => {
+  current.value = (current.value + 1) % props.images.length;
+};
+
+const prevSlide = () => {
+  current.value =
+    (current.value - 1 + props.images.length) % props.images.length;
+};
+
+onMounted(() => {
+  interval = setInterval(autoSlide, 2500);
+});
+
+onBeforeUnmount(() => clearInterval(interval));
+</script>
