@@ -5,6 +5,7 @@ import Activity from "@/pages/Activity.vue";
 import Info from "@/pages/TipsInfo.vue";
 import Gallery from "@/pages/Gallery.vue";
 import FAQ from "@/pages/FAQ.vue";
+import COTS from "@/pages/Cots.vue";
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     name: "FAQ",
     component: FAQ,
   },
+  {
+    path: "/COTS",
+    name: "COTS",
+    component: COTS,
+  }
 ];
 
 const router = createRouter({

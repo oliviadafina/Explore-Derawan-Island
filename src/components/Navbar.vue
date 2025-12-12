@@ -78,6 +78,7 @@ const menu = [
   { label: "Activity", to: "/activity" },
   { label: "Tips & Info", to: "/info" },
   { label: "Gallery", to: "/gallery" },
+  { label: "COTS", to: "/COTS" },
 ];
 
 function toggleMenu() {

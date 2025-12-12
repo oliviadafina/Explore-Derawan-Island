@@ -36,3 +36,23 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### SUBMISSION
+File yang terlibat:
+
+Component
+- /components/COTS/ExperienceCard.vue
+- /components/COTS/InfoAuthor.vue
+
+Section
+- /components/Navbar.vue
+- /components/Footer.vue
+
+Pages
+- components/pages/Cots.vue
+
+Router
+- /router/index.html
+
+Public
+- /public/profile.jpg
